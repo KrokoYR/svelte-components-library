@@ -1,7 +1,7 @@
 import Button from './Button.svelte';
 
 export default {
-  title: 'Example/Button',
+  title: 'UI/Button',
   component: Button,
   argTypes: {
     label: { control: 'text' },
@@ -25,22 +25,5 @@ const Template = ({ onClick, ...args }) => ({
 export const Primary = Template.bind({});
 Primary.args = {
   primary: true,
-  label: 'Button',
-};
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: 'Button',
-};
-
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
-  label: 'Button',
-};
-
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
   label: 'Button',
 };

@@ -5,6 +5,9 @@ import livereload from "rollup-plugin-livereload";
 import { terser } from "rollup-plugin-terser";
 import css from "rollup-plugin-css-only";
 import copy from "rollup-plugin-copy-assets";
+import sveltePreprocess from 'svelte-preprocess'
+
+import analyze from 'rollup-plugin-analyzer'
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -42,15 +45,13 @@ export default {
     file: "public/build/bundle.js",
   },
   plugins: [
+    analyze(),
     svelte({
       compilerOptions: {
         // enable run-time checks when not in production
         dev: !production,
-        // we'll extract any component CSS out into
-        // a separate file - better for performance
-        preprocess: sveltePreprocess({ postcss: true }),
-        // enable run-time checks when not in production
       },
+      preprocess: sveltePreprocess({ postcss: true }),
     }),
     // we'll extract any component CSS out into
     // a separate file - better for performance
