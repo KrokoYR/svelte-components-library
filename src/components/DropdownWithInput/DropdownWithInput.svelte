@@ -1,4 +1,5 @@
 <script>
+  import QuestionMark from '../../assets/icon/question-mark-circle.svg';
   import '../../index.css';
   import { fade } from 'svelte/transition';
 
@@ -14,7 +15,6 @@
   });
 </script>
 
-<!-- This example requires Tailwind CSS v2.0+ -->
 <div class="w-64 mx-auto text-right h-96">
   <div class="relative inline-block text-left">
     <label for="account_number" class="block text-sm font-medium text-gray-700"
@@ -33,33 +33,9 @@
       <div
         class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none cursor-pointer"
       >
-        <!-- Heroicon name: solid/question-mark-circle -->
-        <svg
-          class="h-5 w-5 text-gray-400"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          aria-hidden="true"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
-            clip-rule="evenodd"
-          />
-        </svg>
+        <QuestionMark />
       </div>
     </div>
-
-    <!--
-    Dropdown menu, show/hide based on menu state.
-
-    Entering: "transition ease-out duration-100"
-      From: "transform opacity-0 scale-95"
-      To: "transform opacity-100 scale-100"
-    Leaving: "transition ease-in duration-75"
-      From: "transform opacity-100 scale-100"
-      To: "transform opacity-0 scale-95"
-  -->
     {#if visible}
       <div
         transition:fade={{ duration: 200 }}

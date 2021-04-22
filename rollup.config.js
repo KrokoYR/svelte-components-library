@@ -6,6 +6,8 @@ import { terser } from "rollup-plugin-terser";
 import css from "rollup-plugin-css-only";
 import copy from "rollup-plugin-copy-assets";
 import sveltePreprocess from 'svelte-preprocess'
+import svelteSVG from "rollup-plugin-svelte-svg";
+
 
 import analyze from 'rollup-plugin-analyzer'
 
@@ -45,6 +47,7 @@ export default {
     dir: "public/build/",
   },
   plugins: [
+    svelteSVG(),
     analyze(),
     svelte({
       compilerOptions: {
