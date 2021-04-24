@@ -8,7 +8,7 @@ import copy from "rollup-plugin-copy-assets";
 import sveltePreprocess from 'svelte-preprocess'
 import svelteSVG from "rollup-plugin-svelte-svg";
 
-
+import typescript from '@rollup/plugin-typescript';
 import analyze from 'rollup-plugin-analyzer'
 
 const production = !process.env.ROLLUP_WATCH;
@@ -39,7 +39,7 @@ function serve() {
 }
 
 export default {
-  input: "src/main.js",
+  input: "src/main.ts",
   output: {
     sourcemap: true,
     format: "es",
@@ -56,6 +56,7 @@ export default {
       },
       preprocess: sveltePreprocess({ postcss: true }),
     }),
+    typescript({ sourceMap: !production }),
     // we'll extract any component CSS out into
     // a separate file - better for performance
     css({ output: "bundle.css" }),

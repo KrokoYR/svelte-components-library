@@ -1,4 +1,5 @@
 import Input from './Input.svelte';
+import QuestionMark from '../Icons/QuestionMark.svelte'
 
 export default {
   title: 'UI/Input',
@@ -17,6 +18,8 @@ const Template = ({ onClick, ...args }) => ({
 
 export const Primary = Template.bind({});
 Primary.args = {
-  primary: true,
   label: 'Input',
+  error: false,
+  helpText: 'default sub text',
+  icon: QuestionMark
 };

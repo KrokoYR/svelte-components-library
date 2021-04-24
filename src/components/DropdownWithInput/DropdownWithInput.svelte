@@ -1,7 +1,10 @@
 <script>
-  import QuestionMark from '../../assets/icon/question-mark-circle.svg';
-  import '../../index.css';
   import { fade } from 'svelte/transition';
+
+  import QuestionMark from '../Icons/QuestionMark.svelte';
+  import '../../index.css';
+
+  let city = '';
 
   let visible = false;
   const handleFocus = () => {
@@ -24,6 +27,7 @@
       <input
         on:focus={handleFocus}
         on:blur={handleBlur}
+        bind:value={city}
         type="text"
         name="account_number"
         id="account_number"
