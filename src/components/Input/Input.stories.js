@@ -19,7 +19,7 @@ const Template = ({ onClick, ...args }) => ({
 export const Primary = Template.bind({});
 Primary.args = {
   label: 'Input',
-  error: false,
+  error: '',
   helpText: 'default sub text',
   icon: QuestionMark
 };

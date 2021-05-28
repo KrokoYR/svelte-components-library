@@ -1,9 +1,9 @@
 <script lang="ts">
   import '../../index.css';
 
-  export let error = '';
-  export let label;
-  export let helpText;
+  export let error: string = '';
+  export let label: string;
+  export let helpText: string;
 
   const errorTextColor = 'text-red-900';
   const defaultClasses =
